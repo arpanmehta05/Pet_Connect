@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #81A6C6;
+  --color-primary-dark: #5d8aad;
+  --color-primary-deeper: #4a7191;
+  --color-secondary: #AACDDC;
+  --color-secondary-light: #c8e0eb;
+  --color-beige-light: #F3E3D0;
+  --color-beige: #ede0d0;
+  --color-beige-dark: #D2C4B4;
+  --color-beige-darker: #b0a090;
+  --color-surface: #faf6f1;
+  --color-surface-card: rgba(255, 255, 255, 0.55);
+  --font-family-outfit: 'Outfit', sans-serif;
+}
+
+/* ── Base reset & global ──────────────────────────── */
+
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--color-surface);
+  color: #3b3b3b;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ── Scrollbar ────────────────────────────────────── */
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: var(--color-surface); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
+
+/* ── Selection ────────────────────────────────────── */
+::selection {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* ── Focus ring utility ───────────────────────────── */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* ── Smooth page transitions ──────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+/* ── Auth panel illustration background pattern ───── */
+.auth-pattern {
+  background-image:
+    radial-gradient(circle at 25% 35%, rgba(129,166,198,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 65%, rgba(170,205,220,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 90%, rgba(210,196,180,0.12) 0%, transparent 40%);
+}
